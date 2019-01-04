@@ -5,17 +5,16 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Formatter;
 
 /*
- * SHA-1 produz um valor de dispers„o de 160 bits (20 bytes) conhecido como resumo da mensagem, esse valor de dispers„o
- * È normalmente tratado como um n˙mero hexadecimal de 40 dÌgitos.
- * Lucas Diogo FranÁa
- * 2016.2.0120.0023-5
+ * SHA-1 produz um valor de dispers√£o de 160 bits (20 bytes) conhecido como resumo da mensagem, esse valor de dispers√£o
+ * √© normalmente tratado como um n√∫mero hexadecimal de 40 d√≠gitos.
+ * Lucas Diogo Fran√ßa
  */
 
 public class SHA1 {
 
   public static void main(String[] args) {
 
-    // Passo um texto por par‚metro para o mÈtodo que vai encripta-lo e depois o imprimo
+    // Passo um texto por par√¢metro para o m√©todo que vai encripta-lo e depois o imprimo.
     System.out.println("SHA-1: " + encriptarSenha("lucasdiogo123"));
 
   }
@@ -25,14 +24,14 @@ public class SHA1 {
     try {
       MessageDigest criptografia = MessageDigest.getInstance("SHA-1");
       criptografia.reset();
-      // Seto para a codificaÁ„o bin·ria UTF-8 para o texto ficar sem caracteres especiais ilegÌveis
+      // Seto para a codifica√ß√£o bin√°ria UTF-8 para o texto ficar sem caracteres especiais ileg√≠veis.
       criptografia.update(senha.getBytes("UTF-8"));
       sha1 = byteToHex(criptografia.digest());
 
     } catch (NoSuchAlgorithmException e) {
       e.printStackTrace();
     } catch (UnsupportedEncodingException e) {
-      e.printStackTrace();
+      e.printStackTrace(); //Tratamento de erro.
     }
     return sha1;
   }
