@@ -4,9 +4,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /*
- * MD5 È uma funÁ„o de dispers„o criptogr·fica de 128 bits unidirecional desenvolvido para a verificaÁ„o
+ * MD5 √© uma fun√ß√£o de dispers√£o criptogr√°fica de 128 bits unidirecional desenvolvido para a verifica√ß√£o
  * de integridade de arquivos e logins.
- * Lucas Diogo FranÁa
+ * Lucas Diogo Fran√ßa
  * 2016.2.0120.0023-5
  */
 
@@ -17,13 +17,13 @@ public class MD5 {
     try {
 
       // Texto puro
-      String s = "lucasdiogo123";
+      String s = "lucasdiogo";
       MessageDigest msg = MessageDigest.getInstance("MD5");
       msg.update(s.getBytes(), 0, s.length());
       System.out.println("MD5: " + new BigInteger(1, msg.digest()).toString(16));
 
     } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
+      e.printStackTrace(); //Tratamento de erro
     }
   }
 
